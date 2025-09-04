@@ -1,5 +1,23 @@
 Diffusion model work by denoising the noise in the image.
 
+*BEFORE GETTING STARTED*
+- In the image generation field, there are serveral way to do this. By my understanding on this field, the type of model that
+i first encounter is the GAN(Generative Adversarial Network). This model work by having 2 entities: the generator and the discriminator.
+There is some progress on this type of model in generating images, however to biggest bottle neck is that this model are struggling
+to guidance the image the way user want.
+
+- Secondly, some works taking advantage of the way GPT (Generative Pre-trained Transformer) work generate text, the method is called (autoregressive). This method can give
+good quality images. But i don't use this model before so i not know if these model are better in the guidance. The only things
+i know is this model work like GPT, taking the before "image token"(it might be the pixel value ??) to generat next token. This is very slow.
+
+- Thirdly, is the diffusion model, currently use in most SOTA(Sate of the art) model. Instead of generating a next token, it will take
+a random noised image and denoise that, this can work in parallel and archive significant generation speed.
+
+- For the diffusion model, there is 2 type as i know: the Unet-based and the DiT(Diffusion Transformer), the unets like SDXL(Stable Diffusion XL)
+and the DiT like SD3(Stable Diffusion 3). I not really know how the unets work and also the DiT, but i know the understanding of the
+general diffusion model. Diffusion model work by denoising the noised image with the guidance. This allow it to generate the image
+that user want to be.
+
 *TRAINING PROGRESS*
 - First the system will generally add noise to the image on each timesteps(t: int) 
 - The model will learn the way to reverse these noise step.
@@ -13,3 +31,5 @@ Diffusion model work by denoising the noise in the image.
 + text prompts will be turned into the vectorized space(this called EMBEDDING)
 + timesteps (commonly be a simple interger "t"), this also need to be embedded(for timesteps, this called positional embedding).
 The reason for this need is, the model need to know the timesteps it will working on.
+
+- So the embedding(the vectorized prompts) is used to guide the model to generate the image the way we want.
