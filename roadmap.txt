@@ -2,6 +2,7 @@
 - The DiT: Diffusion Transformer - by Meta (company that own facebook)
 - The Sana model: LinearDiT - by Nvidia
 - The DiffiT: Vision Transformer Transformer - by Nvidia
+- Attension is all you need -> this for the sinusoidal embedding(positional embedding for timesteps)
 
 *GOAL*
 - The goal for this project is to:
