@@ -1,3 +1,15 @@
-1: build the timestep embbeder and labels embbeder
+*Related Work*
+- The DiT: Diffusion Transformer - by Meta (company that own facebook)
+- The Sana model: LinearDiT - by Nvidia
+- The DiffiT: Vision Transformer Transformer - by Nvidia
 
-2: build the DiT block and LinearDiT block 
+*GOAL*
+- The goal for this project is to:
++ First, understanding the way the diffusion model work
++ Secondly, apply the TMSA(Time-dependance Multihead) from DiffiT and the LinearDiT from Sana model or from other way to archive
+that to build a guidance text-to-image generation model.
++ Thirdly, train the model on Cifar-100 -> imagenet256 for testing
++ Last, train the model on custom danbooru dataset for production model.
+
+*Roadmap*
++ Building the embbeder for timesteps and text-prompt.
