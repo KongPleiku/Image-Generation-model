@@ -1,0 +1,15 @@
+Diffusion model work by denoising the noise in the image.
+
+*TRAINING PROGRESS*
+- First the system will generally add noise to the image on each timesteps(t: int) 
+- The model will learn the way to reverse these noise step.
+
+*Sampling(aka: the process to turn text to image)*
+- The system will generate a random image with noises
+- Model will denoise the noise in the image during each step
+
+*Methodoloy*
+- There is 2 things need to consider in text-to-image diffusion model: Text prompts and timesteps
++ text prompts will be turned into the vectorized space(this called EMBEDDING)
++ timesteps (commonly be a simple interger "t"), this also need to be embedded(for timesteps, this called positional embedding).
+The reason for this need is, the model need to know the timesteps it will working on.
