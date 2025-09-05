@@ -13,4 +13,5 @@ that to build a guidance text-to-image generation model.
 + Last, train the model on custom danbooru dataset for production model.
 
 *Roadmap*
-+ Building the embbeder for timesteps and text-prompt.
++ Building the embbeder for timesteps and text-prompt. -> DONE
++ Building the Linear Attention block for model 
