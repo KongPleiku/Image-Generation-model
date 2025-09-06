@@ -9,6 +9,10 @@ from timm.models.vision_transformer import PatchEmbed, Attention, Mlp
 #################################################################
 #           Embedding layer for TimeStep and Lebels             #
 #################################################################
+"""
+Some notices: The model are using are DiT build upon the ViT(Vision Transformer)
+- it need to use the PatchEmbed: Turn the image into batches of smaller size like 8x8 and vectorized it
+"""
 
 class TimestepEmbedder(nn.Module):
     """
@@ -20,7 +24,7 @@ class TimestepEmbedder(nn.Module):
         #setting up the MLP layer to turn the embedding into readable for other module
         self.mlp = nn.Sequential(
             nn.Linear(frequency_embedding_size, hidden_size, bias=True),
-            nn.SiLU(),
+            nn.SiLU(), #swish activation function
             nn.Linear(hidden_size, hidden_size, bias=True),
         )
         self.frequency_embedding_size = frequency_embedding_size
@@ -138,3 +142,7 @@ class LabelsEmbedder(nn.Module):
             labels = self.token_drop(labels, force_drop_ids)
         embeddings = self.embedding_table(labels)
         return embeddings
+
+#########################################
+#           Attention Block             #
+#########################################
