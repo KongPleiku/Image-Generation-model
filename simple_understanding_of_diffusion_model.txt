@@ -33,3 +33,8 @@ that user want to be.
 The reason for this need is, the model need to know the timesteps it will working on.
 
 - So the embedding(the vectorized prompts) is used to guide the model to generate the image the way we want.
+
+*Some note*
+- Currently the model that i was follow is the DiffiT. In the TMSA section, the TMSA they proposed is taking the spatial(the width and height,may be?)
+and the temporal(timesteps and labels), But the temporal are only the labels not text. And the temporal are the single vector that present
+the timesteps and the embbeded labels. One solution that i found is to use the CLS token to guidance.
