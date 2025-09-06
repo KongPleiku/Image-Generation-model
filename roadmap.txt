@@ -15,3 +15,12 @@ that to build a guidance text-to-image generation model.
 *Roadmap*
 + Building the embbeder for timesteps and text-prompt. -> DONE
 + Building the Linear Attention block for model 
+
+*To-do*
++ Build simple Multihead and single-head attention block for testing.
+                    |
++ Build the Linear Attention block
+                    |
++ Build the TMSA block 
+                    |
++ Build the linear TMSA block
